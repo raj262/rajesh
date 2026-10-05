@@ -1,6 +1,24 @@
-# Rajesh Kumar — Portfolio
+# Rajesh Kumar — Full Stack Developer Portfolio
 
-Full stack developer portfolio built with React, Vite, and the ThreeUI **SylvaHero** (Living Green) scene.
+Portfolio of **Rajesh Kumar**, Full Stack Developer and Team Lead based in Gonda, Uttar Pradesh. Built with React, Vite, and the ThreeUI SylvaHero (Living Green) scene.
+
+## SEO
+
+- Meta title, description, keywords, robots
+- Open Graph + Twitter cards
+- JSON-LD (`Person`, `WebSite`, `WebPage`)
+- `robots.txt` + `sitemap.xml`
+- Semantic sections with accessible headings
+
+Canonical / social URLs currently point to:
+
+`https://raj262.github.io/rajesh/`
+
+If you deploy on a custom domain, update:
+
+- `index.html` (`canonical`, `og:url`, JSON-LD)
+- `public/robots.txt`
+- `public/sitemap.xml`
 
 ## Run locally
 

@@ -106,8 +106,12 @@ export function App() {
 
   return (
     <div className="site">
+      <a className="skip-link" href="#about">
+        Skip to content
+      </a>
+
       <header className="site-nav">
-        <nav className="dock" aria-label="Page">
+        <nav className="dock" aria-label="Primary">
           <a className="dock-mark" href="#top" aria-label="Rajesh Kumar — home">
             RK
           </a>
@@ -123,7 +127,11 @@ export function App() {
         </nav>
       </header>
 
-      <section className="hero-shell" id="top" aria-label="Hero">
+      <h1 className="seo-title">
+        Rajesh Kumar — Full Stack Developer in Gonda, Uttar Pradesh
+      </h1>
+
+      <section className="hero-shell" id="top" aria-label="Hero introduction">
         <div className="shader-frame">
           <SylvaHero
             variant="living-green"
@@ -153,40 +161,43 @@ export function App() {
         </div>
 
         <main className="site-main">
-          <section className="band about" id="about">
+          <section className="band about" id="about" aria-labelledby="about-heading">
             <div className="band-inner">
               <div className="hero-copy">
                 <p className="kicker">About me</p>
-                <h2 className="headline">
+                <h2 className="headline" id="about-heading">
                   Full Stack Developer
                   <span>building usable products</span>
                   <span>end to end.</span>
                 </h2>
                 <p className="lede">
-                  I’m Rajesh Kumar — based in Gonda, Uttar Pradesh — with 8+ years shipping web and
-                  mobile products from interface to implementation.
+                  Hire Rajesh Kumar — a Full Stack Developer in Gonda, Uttar Pradesh with 8+ years
+                  of experience shipping web and mobile products from UI design to backend delivery.
                 </p>
               </div>
 
               <div className="about-body">
                 <div className="about-main">
                   <p className="copy">
-                    I work across design and engineering: user research, wireframing, prototyping,
-                    React.js, Next.js, HTML, CSS, JavaScript, Bootstrap, PHP, and WordPress. I care
-                    about usability, accessibility, and clean aesthetics — and I collaborate with
-                    cross-functional teams to deliver responsive, high-performance experiences.
+                    I specialize in React.js, Next.js, JavaScript, PHP, WordPress, HTML, CSS, and
+                    Bootstrap, with strong UI/UX skills in Figma, wireframing, and prototyping. As a
+                    Team Lead I partner with designers and developers to ship accessible, responsive,
+                    high-performance websites and apps aligned with business goals.
                   </p>
-                  <ul className="stat-row">
-                    {stats.map((stat) => (
-                      <li key={stat.label} className="stat-card">
-                        <p className="stat-label">{stat.label}</p>
-                        <strong className="stat-value">{stat.value}</strong>
-                        <p className="stat-note">{stat.note}</p>
+                  <ul className="signal-row" aria-label="Highlights">
+                    {stats.map((stat, index) => (
+                      <li key={stat.label} className="signal">
+                        <span className="signal__index" aria-hidden="true">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span className="signal__label">{stat.label}</span>
+                        <strong className="signal__value">{stat.value}</strong>
+                        <p className="signal__note">{stat.note}</p>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <aside className="paper-card education-card">
+                <aside className="paper-card education-card" aria-label="Education">
                   <p className="paper-label">Education</p>
                   <h3>Bachelor of Computer Applications</h3>
                   <p>Integral University, Lucknow</p>
@@ -195,7 +206,7 @@ export function App() {
             </div>
           </section>
 
-          <section className="band portfolio" id="portfolio">
+          <section className="band portfolio" id="portfolio" aria-labelledby="work-heading">
             <div className="band-inner">
               <div className="work-head">
                 <div className="work-head__rail" aria-hidden="true">
@@ -203,8 +214,8 @@ export function App() {
                   <i />
                 </div>
                 <div className="work-head__copy">
-                  <p className="kicker">Career path</p>
-                  <h2 className="work-title">
+                  <p className="kicker">Work experience</p>
+                  <h2 className="work-title" id="work-heading">
                     <span className="work-title__ghost" aria-hidden="true">
                       08
                     </span>
@@ -213,8 +224,8 @@ export function App() {
                   </h2>
                 </div>
                 <p className="work-head__lede">
-                  A trail from PHP and WordPress into UI/UX, React, and team lead roles — design and
-                  build kept in the same hands.
+                  Full Stack and UI/UX career path across Mohali, Noida, and Lucknow — from PHP and
+                  WordPress development to React products and team leadership.
                 </p>
               </div>
 
@@ -239,15 +250,18 @@ export function App() {
             </div>
           </section>
 
-          <section className="band skills" id="skills">
+          <section className="band skills" id="skills" aria-labelledby="skills-heading">
             <div className="band-inner">
               <div className="hero-copy">
-                <p className="kicker">Skills</p>
-                <h2 className="headline">
+                <p className="kicker">Technical skills</p>
+                <h2 className="headline" id="skills-heading">
                   Full stack
                   <span>toolkit.</span>
                 </h2>
-                <p className="lede">The materials I reach for every week — design, build, and delivery.</p>
+                <p className="lede">
+                  Core skills for modern web development — UI/UX design, frontend engineering, PHP,
+                  WordPress, and agile delivery.
+                </p>
               </div>
 
               <div className="skills-grid">
@@ -267,16 +281,17 @@ export function App() {
             </div>
           </section>
 
-          <section className="band contact" id="contact">
+          <section className="band contact" id="contact" aria-labelledby="contact-heading">
             <div className="band-inner contact-layout">
               <div className="hero-copy">
-                <p className="kicker">Contact us</p>
-                <h2 className="headline">
+                <p className="kicker">Contact</p>
+                <h2 className="headline" id="contact-heading">
                   Let’s talk about
                   <span>your next product.</span>
                 </h2>
                 <p className="lede">
-                  Open to full stack development, product builds, and team-lead collaborations.
+                  Looking to hire a Full Stack Developer or Team Lead for React, Next.js, PHP, or
+                  WordPress work? Reach out for freelance and product collaborations.
                 </p>
                 <div className="contact-details">
                   <a className="contact-link" href="mailto:raj262.kum@gmail.com">
@@ -327,7 +342,9 @@ export function App() {
           <div className="band-inner footer-inner">
             <div>
               <p className="footer-mark">Rajesh Kumar</p>
-              <p className="footer-copy">Full Stack Developer · Design · Team Lead</p>
+              <p className="footer-copy">
+                Full Stack Developer in Gonda, UP · React · Next.js · PHP · UI/UX
+              </p>
             </div>
             <div className="footer-links">
               {navItems.map((item) => (
