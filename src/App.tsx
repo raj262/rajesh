@@ -7,47 +7,43 @@ import "./portfolio.css";
 const experience = [
   {
     year: "2025 — 2026",
-    label: "Field note 01",
+    label: "Role 01",
     title: "FAB Web Studio",
     role: "Senior UI/UX & Web Designer · Team Lead",
     place: "Mohali",
     summary:
       "Led UI/UX and web design from concept to delivery, keeping designers and developers aligned so products stayed user-friendly and visually consistent.",
     tags: ["UI/UX", "Web design", "Team lead"],
-    image: "/landing-pages/inner-green-assets/card-ethos.jpg",
   },
   {
     year: "2021 — 2025",
-    label: "Field note 02",
+    label: "Role 02",
     title: "Technogetic Pvt. Ltd.",
     role: "Senior Frontend Designer · Team Lead",
     place: "Mohali",
     summary:
       "Designed and developed modern responsive web applications, kept code consistent with engineering, and integrated third-party services including payment gateways.",
     tags: ["React", "Responsive UI", "Integrations"],
-    image: "/landing-pages/inner-green-assets/card-ecostove.jpg",
   },
   {
     year: "2020 — 2021",
-    label: "Field note 03",
+    label: "Role 03",
     title: "Ouctus Technology",
     role: "PHP Developer",
     place: "Noida",
     summary:
       "Delivered large-scale projects on time, customized WordPress sites with Elementor and WPBakery, and improved website performance by about 30%.",
     tags: ["WordPress", "PHP", "Performance"],
-    image: "/landing-pages/inner-green-assets/card-ethos.jpg",
   },
   {
     year: "2017 — 2019",
-    label: "Field note 04",
+    label: "Role 04",
     title: "Advent Softech India",
     role: "PHP Developer",
     place: "Lucknow",
     summary:
       "Built and supported web experiences while collaborating with developers to streamline workflows and raise team productivity.",
     tags: ["PHP", "Web development"],
-    image: "/landing-pages/inner-green-assets/card-ecostove.jpg",
   },
 ];
 
@@ -67,9 +63,9 @@ const skillGroups = [
 ];
 
 const stats = [
-  { label: "Years shipping", value: "4+" },
-  { label: "Roles led", value: "Team Lead" },
-  { label: "Focus", value: "Full Stack" },
+  { label: "Years experience", value: "8+", note: "Web & product delivery" },
+  { label: "Roles led", value: "Team Lead", note: "Design + engineering" },
+  { label: "Focus", value: "Full Stack", note: "UI to backend" },
 ];
 
 const navItems = [
@@ -167,71 +163,79 @@ export function App() {
                   <span>end to end.</span>
                 </h2>
                 <p className="lede">
-                  I’m Rajesh Kumar — based in Gonda, Uttar Pradesh — with 4+ years shipping web and
+                  I’m Rajesh Kumar — based in Gonda, Uttar Pradesh — with 8+ years shipping web and
                   mobile products from interface to implementation.
                 </p>
               </div>
 
-              <div className="about-split">
-                <p className="copy">
-                  I work across design and engineering: user research, wireframing, prototyping,
-                  React.js, Next.js, HTML, CSS, JavaScript, Bootstrap, PHP, and WordPress. I care
-                  about usability, accessibility, and clean aesthetics — and I collaborate with
-                  cross-functional teams to deliver responsive, high-performance experiences.
-                </p>
-                <aside className="paper-card paper-card--compact">
+              <div className="about-body">
+                <div className="about-main">
+                  <p className="copy">
+                    I work across design and engineering: user research, wireframing, prototyping,
+                    React.js, Next.js, HTML, CSS, JavaScript, Bootstrap, PHP, and WordPress. I care
+                    about usability, accessibility, and clean aesthetics — and I collaborate with
+                    cross-functional teams to deliver responsive, high-performance experiences.
+                  </p>
+                  <ul className="stat-row">
+                    {stats.map((stat) => (
+                      <li key={stat.label} className="stat-card">
+                        <p className="stat-label">{stat.label}</p>
+                        <strong className="stat-value">{stat.value}</strong>
+                        <p className="stat-note">{stat.note}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <aside className="paper-card education-card">
                   <p className="paper-label">Education</p>
                   <h3>Bachelor of Computer Applications</h3>
                   <p>Integral University, Lucknow</p>
                 </aside>
               </div>
-
-              <ul className="stat-row">
-                {stats.map((stat) => (
-                  <li key={stat.label}>
-                    <span className="stat-mark" aria-hidden="true" />
-                    <div>
-                      <p>{stat.label}</p>
-                      <strong>{stat.value}</strong>
-                    </div>
-                  </li>
-                ))}
-              </ul>
             </div>
           </section>
 
           <section className="band portfolio" id="portfolio">
             <div className="band-inner">
-              <div className="hero-copy">
-                <p className="kicker">Portfolio</p>
-                <h2 className="headline">
-                  Experience
-                  <span>grown in the field.</span>
-                </h2>
-                <p className="lede">
-                  Roles where design and development stayed in the same hands — from concept through
-                  delivery.
+              <div className="work-head">
+                <div className="work-head__rail" aria-hidden="true">
+                  <span>Work</span>
+                  <i />
+                </div>
+                <div className="work-head__copy">
+                  <p className="kicker">Career path</p>
+                  <h2 className="work-title">
+                    <span className="work-title__ghost" aria-hidden="true">
+                      08
+                    </span>
+                    <span className="work-title__line">Eight years</span>
+                    <span className="work-title__line work-title__line--soft">of shipping.</span>
+                  </h2>
+                </div>
+                <p className="work-head__lede">
+                  A trail from PHP and WordPress into UI/UX, React, and team lead roles — design and
+                  build kept in the same hands.
                 </p>
               </div>
 
-              <div className="card-grid">
-                {experience.map((item) => (
-                  <article key={`${item.title}-${item.year}`} className="paper-card">
-                    <figure className="portal">
-                      <img src={item.image} alt="" loading="lazy" />
-                    </figure>
-                    <p className="paper-label">{item.label}</p>
-                    <h3>{item.title}</h3>
-                    <p className="paper-role">
-                      {item.role}
-                      <span>· {item.place}</span>
-                    </p>
-                    <p className="paper-year">{item.year}</p>
-                    <p className="paper-copy">{item.summary}</p>
-                    <p className="paper-tags">{item.tags.join(" · ")}</p>
-                  </article>
+              <ol className="trail">
+                {experience.map((item, index) => (
+                  <li key={`${item.title}-${item.year}`} className="trail-item">
+                    <div className="trail-meta">
+                      <span className="trail-index">{String(index + 1).padStart(2, "0")}</span>
+                      <span className="trail-year">{item.year}</span>
+                      <span className="trail-place">{item.place}</span>
+                    </div>
+                    <article className="trail-card">
+                      <p className="trail-label">{item.label}</p>
+                      <h3>{item.title}</h3>
+                      <p className="trail-role">{item.role}</p>
+                      <p className="trail-copy">{item.summary}</p>
+                      <p className="trail-tags">{item.tags.join(" · ")}</p>
+                    </article>
+                  </li>
                 ))}
-              </div>
+              </ol>
             </div>
           </section>
 
