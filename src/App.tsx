@@ -184,18 +184,6 @@ export function App() {
                     Team Lead I partner with designers and developers to ship accessible, responsive,
                     high-performance websites and apps aligned with business goals.
                   </p>
-                  <ul className="signal-row" aria-label="Highlights">
-                    {stats.map((stat, index) => (
-                      <li key={stat.label} className="signal">
-                        <span className="signal__index" aria-hidden="true">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <span className="signal__label">{stat.label}</span>
-                        <strong className="signal__value">{stat.value}</strong>
-                        <p className="signal__note">{stat.note}</p>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
                 <aside className="paper-card education-card" aria-label="Education">
                   <p className="paper-label">Education</p>
@@ -203,6 +191,19 @@ export function App() {
                   <p>Integral University, Lucknow</p>
                 </aside>
               </div>
+
+              <ul className="signal-row" aria-label="Highlights">
+                {stats.map((stat, index) => (
+                  <li key={stat.label} className="signal">
+                    <span className="signal__index" aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="signal__label">{stat.label}</span>
+                    <strong className="signal__value">{stat.value}</strong>
+                    <p className="signal__note">{stat.note}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
 
