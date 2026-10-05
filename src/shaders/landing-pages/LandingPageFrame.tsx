@@ -164,6 +164,7 @@ export function LandingPageFrame({
           height: "100%",
           border: 0,
           background: "#080808",
+          overflow: "hidden",
           // A background presentation begins life as the complete source page.
           // Keep that page visually sealed until onLoad has installed the
           // scene-only CSS, otherwise its authored navigation/copy can flash for
@@ -171,6 +172,7 @@ export function LandingPageFrame({
           opacity: backgroundCanvasSelector && !ready ? 0 : 1,
           pointerEvents: backgroundCanvasSelector && !ready ? "none" : "auto",
         }}
+        scrolling="no"
       />
     </div>
   );

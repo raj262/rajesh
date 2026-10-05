@@ -887,7 +887,7 @@ export function buildSylvaHeroDocument(variant: Exclude<SylvaHeroVariant, "livin
 }
 
 const SYLVA_HERO_TITLES: Record<SylvaHeroVariant, string> = {
-  "living-green": "Sylva — Into the living world",
+  "living-green": "Rajesh Kumar — Full Stack Developer",
   "sakura-sunset": "Sylva — Sakura Sunset",
   "maple-autumn": "Sylva — Maple Autumn",
   "sequoia-mist": "Sylva — Sequoia Mist",
