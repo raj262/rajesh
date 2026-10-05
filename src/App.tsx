@@ -74,7 +74,7 @@ const stats = [
 
 const navItems = [
   { href: "#about", label: "About" },
-  { href: "#portfolio", label: "Portfolio" },
+  { href: "#portfolio", label: "Work" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ];
@@ -110,7 +110,24 @@ export function App() {
 
   return (
     <div className="site">
-      <section className="hero-shell" aria-label="Sylva hero">
+      <header className="site-nav">
+        <nav className="dock" aria-label="Page">
+          <a className="dock-mark" href="#top" aria-label="Rajesh Kumar — home">
+            RK
+          </a>
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={active === item.href ? "is-active" : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </header>
+
+      <section className="hero-shell" id="top" aria-label="Hero">
         <div className="shader-frame">
           <SylvaHero
             variant="living-green"
@@ -138,23 +155,6 @@ export function App() {
           <span />
           <span />
         </div>
-
-        <header className="site-nav">
-          <nav className="dock" aria-label="Page">
-            <a className="dock-mark" href="#about" aria-label="Rajesh Kumar — home">
-              RK
-            </a>
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className={active === item.href ? "is-active" : undefined}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </header>
 
         <main className="site-main">
           <section className="band about" id="about">

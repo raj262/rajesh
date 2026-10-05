@@ -130,12 +130,8 @@
      The wrapper does the centring so the capsule itself is free to carry the
      pointer-parallax transform; putting both on one element means whichever
      is written last wins and the dock jumps out of centre. */
-  .dock-wrap{
-    position:absolute; z-index:5;
-    top:calc(38 * var(--u)); left:0; right:0;
-    display:flex; justify-content:center;
-    pointer-events:none;
-  }
+  /* Page chrome owns navigation; keep the authored dock out of the embed. */
+  .dock-wrap{ display:none !important; }
   .dock{
     pointer-events:auto;
     display:flex; align-items:flex-start; gap:calc(3 * var(--u));
@@ -650,7 +646,7 @@
         copy and the cards (760 design units wide) ───────────────────────── */
   @media (max-width:900px){
     :root{ --u: calc(100vw / 760); }
-    .hero{ height:auto; min-height:100svh; }
+    .hero{ height:100%; min-height:100%; overflow:hidden; }
     .stage{
       position:relative; left:auto; top:auto; margin:0;
       width:100%; height:calc(1625 * var(--u));
